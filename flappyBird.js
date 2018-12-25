@@ -21,8 +21,8 @@ let gravity = 1.5;
 let score = 0;
 
 document.addEventListener("keydown", () => {
-    bY -= 25;  
-})  
+    bY -= 25;
+})
 
 let pipe = [];
 pipe[0] = {
@@ -30,39 +30,39 @@ pipe[0] = {
     y: 0
 }
 
-function draw(){
+function draw() {
     ctx.drawImage(bg, 0, 0);
 
-    for(let i=0;i<pipe.length;i++){
+    for (let i = 0; i < pipe.length; i++) {
         ctx.drawImage(pipeNorth, pipe[i].x, pipe[i].y);
-        ctx.drawImage(pipeSouth, pipe[i].x, pipe[i].y+ constantGap);
+        ctx.drawImage(pipeSouth, pipe[i].x, pipe[i].y + constantGap);
 
-        pipe[i].x--; 
-        
-        if(pipe[i].x === 125){
+        pipe[i].x--;
+
+        if (pipe[i].x === 125) {
             pipe.push({
                 x: canvas.clientWidth,
-                y: Math.floor(Math.random()*pipeNorth.height-pipeNorth.height)  
+                y: Math.floor(Math.random() * pipeNorth.height - pipeNorth.height)
             })
         }
-        if( bX+ bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constantGap) || bY + bird.height >=  canvas.height - fg.height){
+        if (bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY + bird.height >= pipe[i].y + constantGap) || bY + bird.height >= canvas.height - fg.height) {
             location.reload();
         }
 
-        if(pipe[i].x === 5){
+        if (pipe[i].x === 5) {
             score++;
         }
     }
-    
-    ctx.drawImage(fg, 0, canvas.height-fg.height);
+
+    ctx.drawImage(fg, 0, canvas.height - fg.height);
     ctx.drawImage(bird, bX, bY);
-    
+
 
     bY += gravity;
 
     ctx.fillStyle = "#000";
     ctx.font = "20px Verdana";
-    ctx.fillText("Score : "+score, 10, canvas.height-20);
+    ctx.fillText("Score : " + score, 10, canvas.height - 20);
 
     requestAnimationFrame(draw);
 }
