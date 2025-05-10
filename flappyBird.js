@@ -5,7 +5,7 @@ let bird = new Image();
 let bg = new Image();
 let fg = new Image();
 let pipeNorth = new Image();
-let pipeSouth = new Image();
+let pipeSouth = new Image
 
 bird.src = "images/bird.png";
 bg.src = "images/bg.png";
