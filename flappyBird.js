@@ -7,6 +7,7 @@ let ctx = canvas.getContext("2d");
 
 
 
+
 let bird = new Image();
 let bg = new Image();
 let fg = new Image();
