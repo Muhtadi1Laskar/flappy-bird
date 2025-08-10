@@ -14,7 +14,6 @@ pipeNorth.src = "images/pipeNorth.png";
 pipeSouth.src = "images/pipeSouth.png";
 
 
-
 let gap = 80;
 let constantGap = pipeNorth.height + gap;
 let bX = 10;
