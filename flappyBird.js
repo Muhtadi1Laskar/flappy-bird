@@ -8,7 +8,6 @@ let pipeNorth = new Image();
 let pipeSouth = new Image();
 
 
-
 bird.src = "images/bird.png";
 bg.src = "images/bg.png";
 fg.src = "images/fg.png";
